@@ -1,0 +1,17 @@
+{
+  "name": "shoppingrecipe",
+  "description": "For shopping based off recipe purposes",
+  "main": "index.js",
+  "authors": [
+    "Thomas Chester"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/thomcchester/shoppingRecipe",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
