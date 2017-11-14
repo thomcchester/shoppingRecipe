@@ -32,7 +32,11 @@ class Header extends React.Component {
       this.setState(state);
     }
 
-
+    render(){
+      return(
+        <h1>killawhale</h1> 
+      )
+    }
 
 }
 

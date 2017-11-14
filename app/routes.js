@@ -12,12 +12,12 @@ import submitRecipe from './pages/submitRecipe/submitRecipe';
 
 import alt from './alt';
 import request from 'superagent';
-//
-// export default (
-//   <Route component={App}>
-//     <Route path='/' component={Home} />
-//     <Route path='/artl' component={artl} />
-//     <Route path='/shoppingList' component={shoppingList} />
-//     <Route path='/submitRecipe' component={submitRecipe} />
-//   </Route>
-// );
+
+export default (
+  <Route component={App}>
+    <Route path='/' component={Home} />
+    <Route path='/artl' component={artl} />
+    <Route path='/shoppingList' component={shoppingList} />
+    <Route path='/submitRecipe' component={submitRecipe} />
+  </Route>
+);
