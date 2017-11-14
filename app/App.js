@@ -5,7 +5,8 @@ import Header from './structure/header/Header';
 class App extends React.Component {
   render() {
     return (
-      <div className="outerCheck">
+      <div>
+          <h1>hello</h1>
           <Header history={this.props.history} />
           {this.props.children}
       </div>
