@@ -1,17 +1,9 @@
 {
-  "name": "shoppingrecipe",
-  "description": "For shopping based off recipe purposes",
-  "main": "index.js",
-  "authors": [
-    "Thomas Chester"
-  ],
-  "license": "ISC",
-  "homepage": "https://github.com/thomcchester/shoppingRecipe",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+  "name": "TommysPersonal",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "bootstrap": "^3.3.5",
+    "magnific-popup": "^1.0.0",
+    "toastr": "^2.1.1"
+  }
 }
