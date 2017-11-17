@@ -1,0 +1,179 @@
+@import '../../bower_components/bootstrap/less/bootstrap';
+@import '../../bower_components/toastr/toastr';
+@import (less) '../../bower_components/magnific-popup/dist/magnific-popup.css';
+@import (less) './home.less';
+@import (less) './hobbies/hobbies.less';
+@import (less) './software.less';
+@import (less) './resume.less';
+@import (less) './importer.less';
+@import (less) './closed.less';
+@import (less) './blog.less';
+
+/*
+ * Bootstrap overrides.
+ */
+
+
+ @MainNeutral:#efefef;
+ @MainNeutralLight:#f5f5f5;
+ @MainNeutralDark:#e6e6e6;
+ @MainText:#b0b0b0;
+ @SecondTextLight:#c2c2c2;
+ @SecondTextDark:#9c9c9c;
+ @MainButton:#F05330;
+ @secondButtonDark:#D9393C;
+ @MainButtonText:#fefefe;
+ @MainButtonBorder:#fefefe;
+ @secondButtonBorder:#b3dfe8;
+ @MainHighlight:#b3dfe8;
+ @BackgroundBlue:#C2E8F0;
+
+@body-bg: @MainNeutral;
+@text-color: @MainText;
+@font-family-base: 'Lato', sans-serif;
+@link-color: #363f34;
+@link-hover-color: #141718;
+
+@navbar-default-bg: @MainNeutralLight;
+@navbar-default-link-color: #353f44;
+@navbar-default-link-hover-bg: @MainNeutralDark;
+@navbar-default-link-active-bg: #f6f7f7;
+
+@btn-default-color: #58666e;
+@btn-default-border: #dee5e7;
+
+@btn-primary-color: #fff;
+@btn-primary-bg: #7266bb;
+@btn-primary-border: #7266bb;
+
+@btn-success-color: #fff;
+@btn-success-bg: #27d24b;
+@btn-success-border: #27d24b;
+
+@btn-info-color: #fff;
+@btn-info-bg: #23b7f5;
+@btn-info-border: #23b7f5;
+
+@btn-warning-color: #fff;
+@btn-warning-bg: #fac732;
+@btn-warning-border: #fac732;
+
+@btn-danger-color: #fff;
+@btn-danger-bg: #f15051;
+@btn-danger-border: #f15051;
+
+@panel-default-border: #dee5e7;
+@panel-border-radius: 2px;
+@panel-default-heading-bg: #f6f8f8;
+
+@screen-sm: 800px;
+
+
+
+
+
+//Intrinsic Values
+html {
+  position: relative;
+  min-height: 100%;
+  font-family: @font-family-base
+}
+
+body {
+  background-color: @MainNeutral;
+  margin-bottom: 220px;
+  -webkit-font-smoothing: antialiased;
+}
+
+//created elements
+  //footer
+  footer {
+    position: absolute;
+    bottom:0px;
+    width: 100%;
+    color: #fff;
+    background-color: @MainNeutralDark;
+    box-shadow: 0px -2px 2px rgba(0,0,0,.05);
+    height:8%;
+    margin:0 auto;
+    margin-top:0;
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+    //footer sub elements
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+
+    footer .thumb-md {
+      border: 1px solid rgba(255,255,255,.15);
+      transition: border .1s linear;
+
+      &:hover {
+        border-color: rgba(255,255,255,.3);
+      }
+    }
+  //navbar elements
+  .navbar {
+    height:5%;
+    border: 0;
+    box-shadow: 0 2px 2px rgba(0,0,0,.05), 0 1px 0 rgba(0,0,0,.05);
+    margin-bottom: 0px;
+  }
+    //sub navbar
+    .navbar-default .navbar-brand {
+      margin-left: 40px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    //sub nav-bar dropdown
+    .dropdown-menu {
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      left: 100%;
+      margin-top: 0;
+      margin-left: 1px;
+      border-radius: 0 6px 6px 6px;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-submenu > a:after {
+      display: block;
+      content: '';
+      float: right;
+      width: 0;
+      height: 0;
+      border: 5px solid transparent;
+      border-right-width: 0;
+      border-left-color: #353f44;
+      margin-top: 5px;
+      margin-right: -10px;
+    }
+
+    .dropdown-submenu.pull-left {
+      float: none;
+    }
+
+    .dropdown-submenu.pull-left > .dropdown-menu {
+      left: -100%;
+      margin-left: 10px;
+      border-radius: 6px 0 6px 6px;
+    }
+@import (less) './hobbies/dadStuff/dadStuff.less';

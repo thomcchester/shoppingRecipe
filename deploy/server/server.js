@@ -1,4 +1,5 @@
 require('babel-register');
+//Bring in external resources
 var mongoose= require('mongoose')
 var express = require('express');
 var path = require('path');
@@ -6,40 +7,34 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var session = require('express-session');
-var localStrategy = require('passport-local');
 var cookieParser = require('cookie-parser')
-
 var swig  = require('swig');
 var React = require('react');
 var ReactDOM = require('react-dom/server');
 var Router = require('react-router');
 var routes = require('../app/routes');
 var _= require('underscore')
-
 var async = require('async');
 var request = require('request');
 var xml2js = require('xml2js');
 
 
+//bring in internal resources
 var DefaultVariables = require('./models/default');
 var defaultRoute = require('./routes/default');
-var Admin = require("./models/admin.js");
-var admin = require("./routes/admin.js");
 var index = require('./routes/index.js')
-var Blogs = require('./models/blogs');
-var blogs = require('./routes/blogs');
-
-
-
 var config = require('./config')
 
+//set app to express
 var app = express();
 
+//connect to mongoose
 mongoose.connect(config.database);
 mongoose.connection.on('error', function() {
   console.info('Error: Could not connect to MongoDB. Did you forget to run `mongod`?');
 });
 
+//get express running
 app.set('port', process.env.PORT || 4000);
 app.use(session({
     saveUninitialized: true,
@@ -54,46 +49,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(passport.initialize());
-app.use(passport.session());
 
-// PASSPORT SESSION
-passport.serializeUser(function(user, done){
-    done(null, user.id);
-});
-passport.deserializeUser(function(id, done){
-    Admin.findById(id, function(err, user){
-        if(err) done(err);
-        done(null, user);
-    });
-});
-passport.use('local', new localStrategy({
-    passReqToCallback: true,
-    usernameField: 'username'
-    },
-    function(req, username, password, done){
-        Admin.findOne({username: username}, function(err, user){
-            if(err) throw err;
-            if(!user){
-                return done(null, false);
-            }
-            user.comparePassword(password, function(err, isMatch){
-                if(err) throw err;
-                if(isMatch){
-                    return done(null, user);
-                }else{
-                    done(null, false);
-                }
-            });
-        });
-    }
-));
-
-
+//set routes
 app.use("/defaults", defaultRoute);
-app.use('/blogs', blogs)
 app.use('/', index);
 
+//get connection
 app.use(function(req, res) {
   Router.match({ routes: routes.default, location: req.url }, function(err, redirectLocation, renderProps) {
     if (err) {
